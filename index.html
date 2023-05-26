@@ -1,0 +1,3257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>THC SPECIES</title>
+  <style>
+    .informacje {
+      display: none;
+    }
+    .interaktywny-obraz {
+      cursor: pointer;
+	 }
+  </style>
+  <script>
+    function pokazInformacje(elementId) {
+      var element = document.getElementById(elementId);
+      var wszystkieObrazy = document.getElementsByClassName("interaktywny-obraz");
+      var wszystkieInformacje = document.getElementsByClassName("informacje");
+
+      // Pokazywanie lub ukrywanie wybranego bloku informacji
+      for (var i = 0; i < wszystkieInformacje.length; i++) {
+        if (wszystkieInformacje[i].id === elementId) {
+          if (wszystkieInformacje[i].style.display === "none") {
+            wszystkieInformacje[i].style.display = "block";
+          } else {
+            wszystkieInformacje[i].style.display = "none";
+          }
+        } else {
+          wszystkieInformacje[i].style.display = "none";
+        }
+      }
+    }
+
+    function wyszukaj() {
+  var input = document.getElementById("szukajka");
+  var filtr = input.value.toUpperCase();
+  var obrazy = document.getElementsByClassName("interaktywny-obraz");
+
+  var ukryteObrazy = [];
+
+  // Iteruj przez obrazy i sprawdź, czy odpowiadają wyszukiwanemu filtrowi
+  for (var i = 0; i < obrazy.length; i++) {
+    var opis = obrazy[i].getAttribute("alt");
+    if (opis.toUpperCase().indexOf(filtr) > -1) {
+      obrazy[i].style.display = "";
+    } else {
+      obrazy[i].style.display = "none";
+      ukryteObrazy.push(obrazy[i]);
+    }
+  }
+
+  // Pokaż obrazy ukryte po kliknięciu
+  var wszystkieInformacje = document.getElementsByClassName("informacje");
+  for (var j = 0; j < wszystkieInformacje.length; j++) {
+    if (wszystkieInformacje[j].style.display === "block") {
+      var informacjeId = wszystkieInformacje[j].id;
+      var obrazId = informacjeId.replace("informacje", "obraz");
+      var obraz = document.getElementById(obrazId);
+      if (obraz && ukryteObrazy.includes(obraz)) {
+        obraz.style.display = "";
+      }
+    }
+  }
+}
+
+  </script>
+</head>
+<body>
+  <h1><center>Specyfikacja gatunków <span style="color: orange">theHunter Classic</span></center></h1>
+
+  <center><input type="text" id="szukajka" onkeyup="wyszukaj()" placeholder="Wyszukaj gatunek...">
+  <button onclick="location.reload()">Odśwież stronę</button>
+<br>
+  
+<!-- AXIS DEER AKTUALNA WERSJA SPECYFIKACJI -->
+
+  <img src="animals/axis.png" alt="czytal axis deer" class="interaktywny-obraz" id="obraz1" onclick="pokazInformacje('informacje1')">
+  <div id="informacje1" class="informacje">
+    <h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Czytal / Axis Deer</h2><br><br>
+	<font size="3">Występowanie: <b>Bushrangers Run</b>
+	<br><img src="reserves/bushrangers.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>20</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>215</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>100</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Dark</b></td>
+      <td><b>Piebald</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/axis/axiscommon.png"></td>
+      <td><img src="fur/axis/axisdark.png"></td>
+      <td><img src="fur/axis/axispiebald.png"></td>
+	  <td><img src="fur/axis/axisalbino.png"></td>
+      <td><img src="fur/axis/axismelanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/axisammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/czytal.png">
+  </p>
+  </div>
+  
+  <!-- ALPINE IBEX AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/ibex.png" alt="koziorożec alpejski alpine ibex" class="interaktywny-obraz" id="obraz2" onclick="pokazInformacje('informacje2')">
+  <div id="informacje2" class="informacje">
+     <h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Koziorożec Alpejski / Alpine Ibex</h2><br><br>
+	<font size="3">Występowanie: <b>Val-Des-Bois</b>
+	<br><img src="reserves/val.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>43</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>290</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>73</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>117kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Dark</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/ibex/common.png"></td>
+      <td><img src="fur/ibex/dark.png"></td>
+      <td><img src="fur/ibex/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/ibexammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/ibex.png">
+  </p>
+  </div>
+  
+  <!-- TURKEY AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/turkey.png" alt="indyk turkey" class="interaktywny-obraz" id="obraz3" onclick="pokazInformacje('informacje3')">
+  <div id="informacje3" class="informacje">
+<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Indyk / Turkey</h2><br><br>
+	<font size="3">Występowanie: <b>Whitehart Island, Settler Creeks</b>
+	<br><img src="reserves/settler.png"> <img src="reserves/whitehart.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>23</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>72</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>140</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>10kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Grey</b></td>
+	  <td><b>Leucistic</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/turkey/common.png"></td>
+      <td><img src="fur/turkey/grey.png"></td>
+      <td><img src="fur/turkey/leucistic.png"></td>
+	  <td><img src="fur/turkey/albino.png"></td>
+      <td><img src="fur/turkey/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/turkeyammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/turkey.png">
+  </p>
+  </div>
+  
+  <!-- ARCTIC FOX AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/arcticfox.png" alt="arctic fox lis polarny" class="interaktywny-obraz" id="obraz4" onclick="pokazInformacje('informacje4')">
+  <div id="informacje4" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Lis Polarny / Arctic Fox</h2><br><br>
+	<font size="3">Występowanie: <b>Whiterime Ridge</b>
+	<br><img src="reserves/whiterime.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>3</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>18</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>75</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>8kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Blue</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/arcticfox/common.png"></td>
+      <td><img src="fur/arcticfox/blue.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/arcticfoxammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/lisp.png">
+  </p>
+  </div>
+  
+  <!-- BANTENG AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/banteng.png" alt="banteng" class="interaktywny-obraz" id="obraz5" onclick="pokazInformacje('informacje5')">
+  <div id="informacje5" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Banteng</h2><br><br>
+	<font size="3">Występowanie: <b>Piccabeen Bay</b>
+	<br><img src="reserves/picca.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>70</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>185</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>45</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Dark</b></td>
+	  <td><b>Albino</b></td>
+      <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/banteng/common.png"></td>
+      <td><img src="fur/banteng/dark.png"></td>
+	  <td><img src="fur/banteng/albino.png"></td>
+      <td><img src="fur/banteng/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/bantengammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/banteng.png">
+  </p>
+  </div>
+  
+  <!-- OWCA GRUBOROGA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/owcag.png" alt="bighorn sheep owca gruboroga" class="interaktywny-obraz" id="obraz6" onclick="pokazInformacje('informacje6')">
+  <div id="informacje6" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Bighorn Sheep / Owca Gruboroga</h2><br><br>
+	<font size="3">Występowanie: <b>Timbergold Trails</b>
+	<br><img src="reserves/timber.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>20</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>210</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>73</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Dark</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/owcag/common.png"></td>
+      <td><img src="fur/owcag/dark.png"></td>
+	  <td><img src="fur/owcag/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/owcagammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/owcag.png">
+  </p>
+  </div>
+  
+  <!-- BIZON AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/bison.png" alt="bison bizon" class="interaktywny-obraz" id="obraz7" onclick="pokazInformacje('informacje7')">
+  <div id="informacje7" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Bison / Bizon</h2><br><br>
+	<font size="3">Występowanie: <b>Whiterime Ridge</b>
+	<br><img src="reserves/whiterime.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>31</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>130</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>68</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>907kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Leucistic</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/bison/common.png"></td>
+      <td><img src="fur/bison/leucistic.png"></td>
+	  <td><img src="fur/bison/albino.png"></td>
+	  <td><img src="fur/bison/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/bisonammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/banteng.png">
+  </p>
+  </div>
+  
+  <!-- BARIBAL AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/blackbear.png" alt="black bear baribal" class="interaktywny-obraz" id="obraz8" onclick="pokazInformacje('informacje8')">
+  <div id="informacje8" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Black Bear / Baribal</h2><br><br>
+	<font size="3">Występowanie: <b>Settler Creeks, Redfeather Falls, Rougarou Bayou</b>
+	<br><img src="reserves/settler.png"> <img src="reserves/rff.png"> <img src="reserves/rougarou.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>12</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>24</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>135</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>290kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Chocolate</b></td>
+	  <td><b>Blonde</b></td>
+	  <td><b>Cinnamon</b></td>
+	  <td><b>Glacier</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/blackbear/common.png"></td>
+      <td><img src="fur/blackbear/chocolate.png"></td>
+	  <td><img src="fur/blackbear/blonde.png"></td>
+	  <td><img src="fur/blackbear/cinnamon.png"></td>
+	  <td><img src="fur/blackbear/glacier.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/blackbearammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/baribal.png">
+  </p>
+  </div>
+  
+  <!-- JELEŃ CZARNOOGONIASTY AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/blacktail.png" alt="blacktail deer jeleń czarnoogoniasty" class="interaktywny-obraz" id="obraz9" onclick="pokazInformacje('informacje9')">
+  <div id="informacje9" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Blacktail Deer / Jeleń Czarnoogoniasty</h2><br><br>
+	<font size="3">Występowanie: <b>Whitehart Island, Redfeather Falls</b>
+	<br><img src="reserves/whitehart.png"> <img src="reserves/rff.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>15</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>200</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>120</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>95kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Piebald</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/blacktail/common.png"></td>
+      <td><img src="fur/blacktail/piebald.png"></td>
+	  <td><img src="fur/blacktail/albino.png"></td>
+	  <td><img src="fur/blacktail/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/blacktailammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/btdeer_t.png"> <br>
+  <img src="scoring/btdeer_n.png">
+  </p>
+  </div>
+  
+  <!-- RYŚ AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/bobcat.png" alt="ryś bobcat" class="interaktywny-obraz" id="obraz10" onclick="pokazInformacje('informacje10')">
+  <div id="informacje10" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Bobcat / Ryś</h2><br><br>
+	<font size="3">Występowanie: <b>Whitehart Island, Logger's Point, Settler Creeks, Rougarou Bayou</b>
+	<br><img src="reserves/whitehart.png"> <img src="reserves/loggers.png"> <img src="reserves/settler.png"> <img src="reserves/rougarou.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>5,89</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>9,6</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>140</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Grey</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/bobcat/common.png"></td>
+      <td><img src="fur/bobcat/grey.png"></td>
+	  <td><img src="fur/bobcat/albino.png"></td>
+	  <td><img src="fur/bobcat/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/bobcatammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/bobcat.png">
+  </p>
+  </div>
+  
+  <!-- NIEDŻWIEDŻ BRUNATNY AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/brownbear.png" alt="brown bear niedźwiedź brunatny" class="interaktywny-obraz" id="obraz11" onclick="pokazInformacje('informacje11')">
+  <div id="informacje11" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Brown Bear / Niedźwiedź Brunatny</h2><br><br>
+	<font size="3">Występowanie: <b>Hemmeldal, Val-des-Bois</b>
+	<br><img src="reserves/hemmeldal.png"> <img src="reserves/val.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>16</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>29</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>126</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>482kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Gold</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Silver Tipped</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/brownbear/common.png"></td>
+      <td><img src="fur/brownbear/gold.png"></td>
+	  <td><img src="fur/brownbear/albino.png"></td>
+	  <td><img src="fur/brownbear/silvertipped.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/brownbearammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/brownbear.png">
+  </p>
+  </div>
+  
+  <!-- BERNIKLA KANADYJSKA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/canadag.png" alt="canada goose bernikla kanadyjska" class="interaktywny-obraz" id="obraz12" onclick="pokazInformacje('informacje12')">
+  <div id="informacje12" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Canada Goose / Bernikla Kanadyjska</h2><br><br>
+	<font size="3">Występowanie: <b>Hirschfelden</b>
+	<br><img src="reserves/hirschfelden.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>2500</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>9000</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>40</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>9kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Brown Leucistic</b></td>
+	  <td><b>Amber Leucistic</b></td>
+	  <td><b>Light Grey Leucistic</b></td>
+	  <td><b>Bald Leucistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/canadag/common.png"></td>
+      <td><img src="fur/canadag/brownleucistic.png"></td>
+	  <td><img src="fur/canadag/amberleucistic.png"></td>
+	  <td><img src="fur/canadag/lightgreyleucistic.png"></td>
+	  <td><img src="fur/canadag/baldleucistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/canadagammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/canadag.png">
+  </p>
+  </div>
+  
+  <!-- KRÓLIK AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/rabbit.png" alt="cottontail rabbit królik" class="interaktywny-obraz" id="obraz13" onclick="pokazInformacje('informacje13')">
+  <div id="informacje13" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Cottontail Rabbit / Królik</h2><br><br>
+	<font size="3">Występowanie: <b>Logger's Point, Settler Creeks</b>
+	<br><img src="reserves/loggers.png"> <img src="reserves/settler.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>800</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>2000</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>73</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>2,5kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Leucistic</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/rabbit/common.png"></td>
+      <td><img src="fur/rabbit/leucistic.png"></td>
+	  <td><img src="fur/rabbit/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/rabbitammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/rabbit.png">
+  </p>
+  </div>
+  
+  <!-- KOJOT AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/coyote.png" alt="coyote kojot" class="interaktywny-obraz" id="obraz14" onclick="pokazInformacje('informacje14')">
+  <div id="informacje14" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Coyote / Kojot</h2><br><br>
+	<font size="3">Występowanie: <b>Whitehart Island, Logger's Point</b>
+	<br><img src="reserves/whitehart.png"> <img src="reserves/loggers.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>33</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>60</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>140</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>27kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/coyote/common.png"></td>
+      <td><img src="fur/coyote/albino.png"></td>
+	  <td><img src="fur/coyote/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/coyoteammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/kojot.png">
+  </p>
+  </div>
+  
+  <!-- OWCA JUKOŃSKA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/dallsheep.png" alt="Dall Sheep Owca Jukońska" class="interaktywny-obraz" id="obraz15" onclick="pokazInformacje('informacje15')">
+  <div id="informacje15" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Dall Sheep / Owca Jukońska</h2><br><br>
+	<font size="3">Występowanie: <b>Whiterime Ridge</b>
+	<br><img src="reserves/whiterime.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>19</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>221</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>90</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/dallsheep/common.png"></td>
+      <td><img src="fur/dallsheep/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/dallsheepammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/dallsheep.png">
+  </p>
+  </div>
+  
+  <!-- RYŚ EUROAZJATYCKI AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/lynx.png" alt="euroasian lynx ryś euroazjatycki" class="interaktywny-obraz" id="obraz16" onclick="pokazInformacje('informacje16')">
+  <div id="informacje16" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Eurasian Lynx / Ryś Euroazjatycki</h2><br><br>
+	<font size="3">Występowanie: <b>Hemmeldal</b>
+	<br><img src="reserves/hemmeldal.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>5,5</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>11,4</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>160</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Grey</b></td>
+	  <td><b>Albino</b></td>
+      <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/lynx/common.png"></td>
+      <td><img src="fur/lynx/grey.png"></td>
+	  <td><img src="fur/lynx/albino.png"></td>
+      <td><img src="fur/lynx/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/lynxammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/lynx.png">
+  </p>
+  </div>
+  
+  <!-- KRÓLIK EUROPEJSKI AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/eurabbit.png" alt="european rabbit królik europejski" class="interaktywny-obraz" id="obraz17" onclick="pokazInformacje('informacje17')">
+  <div id="informacje17" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">European Rabbit / Królik Europejski</h2><br><br>
+	<font size="3">Występowanie: <b>Val-des-Bois, Bushrangers Run</b>
+	<br><img src="reserves/val.png"> <img src="reserves/bushrangers.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>800</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>2500</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>73</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>2,5kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Leucistic</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/eurabbit/common.png"></td>
+      <td><img src="fur/eurabbit/leucistic.png"></td>
+	  <td><img src="fur/eurabbit/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/eurabbitammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/eurabbit.png">
+  </p>
+  </div>
+  
+  <!-- DANIEL AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/daniel.png" alt="fallow deer daniel" class="interaktywny-obraz" id="obraz18" onclick="pokazInformacje('informacje18')">
+  <div id="informacje18" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Fallow Deer / Daniel</h2><br><br>
+	<font size="3">Występowanie: <b>Hirschfelden</b>
+	<br><img src="reserves/hirschfelden.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>25</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>200</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>100</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>93kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Chocolate</b></td>
+	  <td><b>Piebald</b></td>
+	  <td><b>Leucistic</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/daniel/common.png"></td>
+      <td><img src="fur/daniel/chocolate.png"></td>
+	  <td><img src="fur/daniel/piebald.png"></td>
+	  <td><img src="fur/daniel/leucistic.png"></td>
+	  <td><img src="fur/daniel/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/danielammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/daniel.png">
+  </p>
+  </div>
+  
+  <!-- DZIKA KOZA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/feralgoat.png" alt="feral goat dzika koza" class="interaktywny-obraz" id="obraz19" onclick="pokazInformacje('informacje19')">
+  <div id="informacje19" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Feral Goat / Dzika Koza</h2><br><br>
+	<font size="3">Występowanie: <b>Bushrangers Run</b>
+	<br><img src="reserves/bushrangers.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>10</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>500</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>73</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Brown</b></td>
+      <td><b>Black</b></td>
+	  <td><b>White</b></td>
+	  <td><b>Grey</b></td>
+	  <td><b>Piebald Black </b></td>
+	  <td><b>Piebald Brown</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/feralgoat/brown.png"></td>
+      <td><img src="fur/feralgoat/black.png"></td>
+	  <td><img src="fur/feralgoat/white.png"></td>
+	  <td><img src="fur/feralgoat/grey.png"></td>
+	  <td><img src="fur/feralgoat/piebbaldblack.png"></td>
+	  <td><img src="fur/feralgoat/piebbaldbrown.png"></td>
+	  <td><img src="fur/feralgoat/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/feralgoatammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/dzikakoza.png">
+  </p>
+  </div>
+  
+  <!-- DZIKA ŚWINIA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/feralhog.png" alt="feral hog dzika świnia" class="interaktywny-obraz" id="obraz20" onclick="pokazInformacje('informacje20')">
+  <div id="informacje20" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Feral Hog / Dzika Świnia</h2><br><br>
+	<font size="3">Występowanie: <b>Logger's Point, Settler Creeks, Rougarou Bayou, Bushrangers Run, Piccabeen Bay</b>
+	<br><img src="reserves/loggers.png"> <img src="reserves/settler.png"> <img src="reserves/rougarou.png"> <img src="reserves/bushrangers.png"> <img src="reserves/picca.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>300</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>1230</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>74</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>204kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Belted</b></td>
+	  <td><b>Piebald</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/feralhog/common.png"></td>
+      <td><img src="fur/feralhog/belted.png"></td>
+	  <td><img src="fur/feralhog/piebald.png"></td>
+	  <td><img src="fur/feralhog/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/feralhogammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/feralhog.png">
+  </p>
+  </div>
+  
+  <!-- WILK SZARY AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/wolf.png" alt="grey wolf wilk szary" class="interaktywny-obraz" id="obraz21" onclick="pokazInformacje('informacje21')">
+  <div id="informacje21" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Grey Wolf / Wilk Szary</h2><br><br>
+	<font size="3">Występowanie: <b>Timbergold Trails</b>
+	<br><img src="reserves/timber.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>14</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>17</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>78</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>90kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Leucistic</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/wolf/common.png"></td>
+      <td><img src="fur/wolf/leucistic.png"></td>
+	  <td><img src="fur/wolf/albino.png"></td>
+	  <td><img src="fur/wolf/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/wolfammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/wilk.png">
+  </p>
+  </div>
+  
+  <!-- NIEDŹWIEDŹ GRIZZY AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/grizzly.png" alt="grizzly bear niedźwiedź grizzly" class="interaktywny-obraz" id="obraz22" onclick="pokazInformacje('informacje22')">
+  <div id="informacje22" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Grizzly Bear / Niedźwiedź Grizzly</h2><br><br>
+	<font size="3">Występowanie: <b>Timbergold Trails</b>
+	<br><img src="reserves/timber.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>15</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>28</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>135</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Blonde</b></td>
+	  <td><b>Grey</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/grizzly/common.png"></td>
+      <td><img src="fur/grizzly/blonde.png"></td>
+	  <td><img src="fur/grizzly/grey.png"></td>
+	  <td><img src="fur/grizzly/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/grizzlyammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/grizzly.png">
+  </p>
+  </div>
+  
+  <!-- BEZPŁETWIEC AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/magpie.png" alt="magpie goose bezpłetwiec" class="interaktywny-obraz" id="obraz23" onclick="pokazInformacje('informacje23')">
+  <div id="informacje23" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Magpie Goose / Bezpłetwiec</h2><br><br>
+	<font size="3">Występowanie: <b>Piccabeen Bay</b>
+	<br><img src="reserves/picca.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>1500</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>4000</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>80</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/magpie/common.png"></td>
+      <td><img src="fur/magpie/albino.png"></td>
+	  <td><img src="fur/magpie/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/magpieammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/magpie.png">
+  </p>
+  </div>
+  
+  <!-- ŁOŚ AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/moose.png" alt="moose łoś" class="interaktywny-obraz" id="obraz24" onclick="pokazInformacje('informacje24')">
+  <div id="informacje24" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Moose / Łoś</h2><br><br>
+	<font size="3">Występowanie: <b>Redfeather Falls, Hemmeldal, Whiterime Ridge</b>
+	<br><img src="reserves/rff.png"> <img src="reserves/hemmeldal.png"> <img src="reserves/whiterime.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>65</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>245</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>95</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>620kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Light</b></td>
+	  <td><b>Piebald</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/moose/common.png"></td>
+      <td><img src="fur/moose/light.png"></td>
+	  <td><img src="fur/moose/piebald.png"></td>
+	  <td><img src="fur/moose/albino.png"></td>
+	  <td><img src="fur/moose/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/mooseammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/moose.png">
+  </p>
+  </div>
+  
+  <!-- MULAK AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/mulak.png" alt="mule deer mulak" class="interaktywny-obraz" id="obraz25" onclick="pokazInformacje('informacje25')">
+  <div id="informacje25" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Mule Deer / Mulak</h2><br><br>
+	<font size="3">Występowanie: <b>Logger's Point, Timbergold Trails</b>
+	<br><img src="reserves/loggers.png"> <img src="reserves/timber.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>20</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>246</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>120</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>136kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Piebald</b></td>
+	  <td><b>Dilute</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/mulak/common.png"></td>
+      <td><img src="fur/mulak/piebald.png"></td>
+	  <td><img src="fur/mulak/dilute.png"></td>
+	  <td><img src="fur/mulak/albino.png"></td>
+	  <td><img src="fur/mulak/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/mulakammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/mulak_t.png"> <br>
+  <img src="scoring/mulak_n.png">
+  </p>
+  </div>
+  
+  <!-- BAŻANT AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/pheasant.png" alt="pheasant bażant" class="interaktywny-obraz" id="obraz26" onclick="pokazInformacje('informacje26')">
+  <div id="informacje26" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Pheasant / Bażant</h2><br><br>
+	<font size="3">Występowanie: <b>Logger's Point, Hirschfelden</b>
+	<br><img src="reserves/loggers.png"> <img src="reserves/hirschfelden.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>5</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>30</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>40</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>3kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+      <td><b>Leucistic</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/pheasant/common.png"></td>
+      <td><img src="fur/pheasant/leucistic.png"></td>
+	  <td><img src="fur/pheasant/albino.png"></td>
+	  <td><img src="fur/pheasant/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/pheasantammo.png">
+   <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/pheasant.png">
+  </p>
+  </div>
+  
+  <!-- NIEDŻWIEDŻ POLARNY AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/polarbear.png" alt="polar bear niedźwiedź polarny" class="interaktywny-obraz" id="obraz27" onclick="pokazInformacje('informacje27')">
+  <div id="informacje27" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Polar Bear / Niedźwiedź Polarny</h2><br><br>
+	<font size="3">Występowanie: <b>Whiterime Ridge</b>
+	<br><img src="reserves/whiterime.png"> 
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>22</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>32</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>116</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>600kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/polarbear/common.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/polarbearammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/polarbear.png">
+  </p>
+  </div>
+  
+  <!-- PUMA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/puma.png" alt="puma" class="interaktywny-obraz" id="obraz28" onclick="pokazInformacje('informacje28')">
+  <div id="informacje28" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Puma</h2><br><br>
+	<font size="3">Występowanie: <b>Timbergold Trails</b>
+	<br><img src="reserves/timber.png"> 
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>11,8</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>15,7</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>170</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Dark Red</b></td>
+	  <td><b>Grey</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/puma/common.png"></td>
+	  <td><img src="fur/puma/darkred.png"></td>
+	  <td><img src="fur/puma/grey.png"></td>
+	  <td><img src="fur/puma/albino.png"></td>
+	  <td><img src="fur/puma/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/pumaammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/puma.png">
+  </p>
+  </div>
+  
+  <!-- JELEŃ SZLACHETNY AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/reddeer.png" alt="red deer jeleń szlachetny" class="interaktywny-obraz" id="obraz29" onclick="pokazInformacje('informacje29')">
+  <div id="informacje29" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Red Deer / Jeleń Szlachetny</h2><br><br>
+	<font size="3">Występowanie: <b>Hirschfelden, Val-des-Bois</b>
+	<br><img src="reserves/hirschfelden.png"> <img src="reserves/val.png"> 
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>70</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>285</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>97</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>240kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Piebald</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/reddeer/common.png"></td>
+	  <td><img src="fur/reddeer/piebald.png"></td>
+	  <td><img src="fur/reddeer/albino.png"></td>
+	  <td><img src="fur/reddeer/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/reddeerammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/reddeer.png">
+  </p>
+  </div>
+  
+  <!-- LIS  AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/redfox.png" alt="red fox lis" class="interaktywny-obraz" id="obraz30" onclick="pokazInformacje('informacje30')">
+  <div id="informacje30" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Red Fox / Lis</h2><br><br>
+	<font size="3">Występowanie: <b>Hirschfelden, Hemmeldal, Val-des-Bois, Bushrangers Run</b>
+	<br><img src="reserves/hirschfelden.png"> <img src="reserves/hemmeldal.png"> <img src="reserves/val.png"> <img src="reserves/bushrangers.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>4</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>34</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>130</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>15,4kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Grey</b></td>
+	  <td><b>Cross</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Silver Tipped</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/redfox/common.png"></td>
+	  <td><img src="fur/redfox/grey.png"></td>
+	  <td><img src="fur/redfox/cross.png"></td>
+	  <td><img src="fur/redfox/albino.png"></td>
+	  <td><img src="fur/redfox/silver.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/redfoxammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/fox.png">
+  </p>
+  </div>
+  
+  <!-- KANGUR RUDY AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/kangaroo.png" alt="red kangaroo kangur rudy" class="interaktywny-obraz" id="obraz31" onclick="pokazInformacje('informacje31')">
+  <div id="informacje31" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Red Kangaroo / Kangur Rudy</h2><br><br>
+	<font size="3">Występowanie: <b>Bushrangers Run</b>
+	<br><img src="reserves/bushrangers.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>18</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>91</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>75</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>91kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/kangaroo/common.png"></td>
+	  <td><img src="fur/kangaroo/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/kangarooammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/kangaroo.png">
+  </p>
+  </div>
+  
+  <!-- RENIFER AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/renifer.png" alt="reindeer renifer" class="interaktywny-obraz" id="obraz32" onclick="pokazInformacje('informacje32')">
+  <div id="informacje32" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Reindeer / Renifer</h2><br><br>
+	<font size="3">Występowanie: <b>Hemmeldal</b>
+	<br><img src="reserves/hemmeldal.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>75</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>730</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>70</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>182kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Piebald</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Leucistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/renifer/common.png"></td>
+	  <td><img src="fur/renifer/piebald.png"></td>
+	  <td><img src="fur/renifer/albino.png"></td>
+	  <td><img src="fur/renifer/leucistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/reniferammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/renifer.png">
+  </p>
+  </div>
+  
+  <!-- WAPITI SKALISTE AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/rockyelk.png" alt="rocky mountain elk wapiti skaliste" class="interaktywny-obraz" id="obraz33" onclick="pokazInformacje('informacje33')">
+  <div id="informacje33" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Rocky Mountain Elk / Wapiti Skaliste</h2><br><br>
+	<font size="3">Występowanie: <b>Timbergold Trails</b>
+	<br><img src="reserves/timber.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>45</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>500</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>95</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>500kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Piebald</b></td>
+	  <td><b>Leucistic</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/rockyelk/common.png"></td>
+	  <td><img src="fur/rockyelk/piebald.png"></td>
+	  <td><img src="fur/rockyelk/leucistic.png"></td>
+	  <td><img src="fur/rockyelk/albino.png"></td>
+	  <td><img src="fur/rockyelk/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/rockyelkammo.png">
+  <br><b>AMMO</b><br><img src="ammo/wapitiammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/wapitis.png">
+  </p>
+  </div>
+  
+  <!-- JELEŃ SITKAJSKI AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/sitka.png" alt="sitka deer jeleń sitkajski" class="interaktywny-obraz" id="obraz34" onclick="pokazInformacje('informacje34')">
+  <div id="informacje34" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Sitka Deer / Jeleń Sitkajski</h2><br><br>
+	<font size="3">Występowanie: <b>Whiterime Ridge</b>
+	<br><img src="reserves/whiterime.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>20</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>120</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>100</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>90kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Leucistic</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/sitka/common.png"></td>
+	  <td><img src="fur/sitka/leucistic.png"></td>
+	  <td><img src="fur/sitka/albino.png"></td>
+	  <td><img src="fur/sitka/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/sitkaammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/sitka.png">
+  </p>
+  </div>
+  
+  <!-- GĘŚ ŚNIEŻNA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/snowgoose.png" alt="snow goose gęś śnieżna" class="interaktywny-obraz" id="obraz35" onclick="pokazInformacje('informacje35')">
+  <div id="informacje35" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Snow Goose / Gęś Śnieżna</h2><br><br>
+	<font size="3">Występowanie: <b>Whiterime Ridge</b>
+	<br><img src="reserves/whiterime.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>2000</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>4500</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>80</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Blue</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/snowgoose/common.png"></td>
+	  <td><img src="fur/snowgoose/blue.png"></td>
+	  <td><img src="fur/snowgoose/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/snowgooseammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/snowgoose.png">
+  </p>
+  </div>
+  
+  <!-- ZAJĄC AMERYKAŃSKI AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/hare.png" alt="snowshoe hare zając amerykański" class="interaktywny-obraz" id="obraz36" onclick="pokazInformacje('informacje36')">
+  <div id="informacje36" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Snowshoe Hare / Zając Amerykański</h2><br><br>
+	<font size="3">Występowanie: <b>Whiterime Ridge</b>
+	<br><img src="reserves/whiterime.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>800</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>2000</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>75</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>2kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/hare/common.png"></td>
+	  <td><img src="fur/hare/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/hareammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/hare.png">
+  </p>
+  </div>
+  
+  <!-- BAWÓŁ WODNY AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/waterbuffalo.png" alt="water buffalo bawół wodny" class="interaktywny-obraz" id="obraz37" onclick="pokazInformacje('informacje37')">
+  <div id="informacje37" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Water Buffalo / Bawół Wodny</h2><br><br>
+	<font size="3">Występowanie: <b>Piccabeen Bay</b>
+	<br><img src="reserves/picca.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>95</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>290</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>110</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Grey</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/waterbuffalo/common.png"></td>
+	  <td><img src="fur/waterbuffalo/grey.png"></td>
+	  <td><img src="fur/waterbuffalo/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/waterbuffaloammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/banteng.png">
+  </p>
+  </div>
+  
+  <!-- JELEŃ WIRGINIJSKI AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/wirgin.png" alt="whitetail deer jeleń wirginijski" class="interaktywny-obraz" id="obraz38" onclick="pokazInformacje('informacje38')">
+  <div id="informacje38" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Whitetail Deer / Jeleń Wirginisjki</h2><br><br>
+	<font size="3">Występowanie: <b>Whitehart Island, Logger's Point, Settler Creeks, Redfeather Falls, Rougarou Bayou</b>
+	<br><img src="reserves/whitehart.png"> <img src="reserves/loggers.png"> <img src="reserves/settler.png"> <img src="reserves/rff.png"> <img src="reserves/rougarou.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>25</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>215</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>120</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>100kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Piebald</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/wirgin/common.png"></td>
+	  <td><img src="fur/wirgin/piebald.png"></td>
+	  <td><img src="fur/wirgin/albino.png"></td>
+	  <td><img src="fur/wirgin/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/wirginammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/wirgin_t.png"> <br>
+  <img src="scoring/wirgin_n.png">
+  </p>
+  </div>
+  
+  <!-- DZIK AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/dzik.png" alt="wild boar dzik" class="interaktywny-obraz" id="obraz39" onclick="pokazInformacje('informacje39')">
+  <div id="informacje39" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Wild Boar / Dzik</h2><br><br>
+	<font size="3">Występowanie: <b>Hirschfelden</b>
+	<br><img src="reserves/hirschfelden.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>55</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>1310</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>75</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>240kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Piebald</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/dzik/common.png"></td>
+	  <td><img src="fur/dzik/piebald.png"></td>
+	  <td><img src="fur/dzik/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/dzikammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/dzik.png">
+  </p>
+  </div>
+  
+  <!-- GŁUSZEC AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/grouse.png" alt="wood grouse głuszec" class="interaktywny-obraz" id="obraz40" onclick="pokazInformacje('informacje40')">
+  <div id="informacje40" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Wood Grouse / Głuszec</h2><br><br>
+	<font size="3">Występowanie: <b>Hirschfelden, Hemmeldal, Val-des-Bois</b>
+	<br><img src="reserves/hirschfelden.png"> <img src="reserves/hemmeldal.png"> <img src="reserves/val.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>1500</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>7200</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>40</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>7,2kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Pale</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/grouse/common.png"></td>
+	  <td><img src="fur/grouse/pale.png"></td>
+	  <td><img src="fur/grouse/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/grouseammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/woodgrouse.png">
+  </p>
+  </div>
+  
+  <!-- SARNA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/roedeer.png" alt="roe deer sarna" class="interaktywny-obraz" id="obraz41" onclick="pokazInformacje('informacje41')">
+  <div id="informacje41" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Roe Deer / Sarna</h2><br><br>
+	<font size="3">Występowanie: <b>Hirschfelden, Hemmeldal, Val-des-Bois</b>
+	<br><img src="reserves/hirschfelden.png"> <img src="reserves/hemmeldal.png"> <img src="reserves/val.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>25</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>265</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>100</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>35kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Piebald</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/roedeer/common.png"></td>
+	  <td><img src="fur/roedeer/piebald.png"></td>
+	  <td><img src="fur/roedeer/albino.png"></td>
+	  <td><img src="fur/roedeer/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/roedeerammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/sarna.png">
+  </p>
+  </div>
+  
+  <!-- WAPITI AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/wapiti.png" alt="roosevelt elk wapiti" class="interaktywny-obraz" id="obraz42" onclick="pokazInformacje('informacje42')">
+  <div id="informacje42" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Roosevelt Elk / Wapiti</h2><br><br>
+	<font size="3">Występowanie: <b>Whitehart Island, Settler Creeks, Redfeather Falls</b>
+	<br><img src="reserves/whitehart.png"> <img src="reserves/settler.png"> <img src="reserves/rff.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>25</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>436</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>95</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>500kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Piebald</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/wapiti/common.png"></td>
+	  <td><img src="fur/wapiti/piebald.png"></td>
+	  <td><img src="fur/wapiti/albino.png"></td>
+	  <td><img src="fur/wapiti/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/wapitiammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/wapiti.png">
+  </p>
+  </div>
+  
+  <!-- SAMBAR SUNDAJSKI AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/rusa.png" alt="rusa deer sambar sundajski" class="interaktywny-obraz" id="obraz43" onclick="pokazInformacje('informacje43')">
+  <div id="informacje43" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Rusa Deer / Sambar Sundajski</h2><br><br>
+	<font size="3">Występowanie: <b>Piccabeen Bay</b>
+	<br><img src="reserves/picca.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>90</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>210</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>120</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Piebald</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/rusa/common.png"></td>
+	  <td><img src="fur/rusa/piebald.png"></td>
+	  <td><img src="fur/rusa/albino.png"></td>
+	  <td><img src="fur/rusa/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/rusaammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/jednobarwny.png">
+  </p>
+  </div>
+  
+  <!-- SAMBAR JEDNOBARWNY AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/sambar.png" alt="sambar deer jednobarwny" class="interaktywny-obraz" id="obraz44" onclick="pokazInformacje('informacje44')">
+  <div id="informacje44" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Sambar Deer / Sambar Jednobarwny</h2><br><br>
+	<font size="3">Występowanie: <b>Piccabeen Bay</b>
+	<br><img src="reserves/picca.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>95</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>260</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>140</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>no</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Piebald</b></td>
+	  <td><b>Albino</b></td>
+	  <td><b>Melanistic</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/sambar/common.png"></td>
+	  <td><img src="fur/sambar/piebald.png"></td>
+	  <td><img src="fur/sambar/albino.png"></td>
+	  <td><img src="fur/sambar/melanistic.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/sambarammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/jednobarwny.png">
+  </p>
+  </div>
+  
+  <!-- PARDWA BIAŁOSTERNA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/pardwab.png" alt="white-tailed ptarmigan pardwa białosterna" class="interaktywny-obraz" id="obraz45" onclick="pokazInformacje('informacje45')">
+  <div id="informacje45" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">White-tailed Ptarmigan / Pardwa Białosterna</h2><br><br>
+	<font size="3">Występowanie: <b>Timbergold Trails</b>
+	<br><img src="reserves/timber.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>330</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>480</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>65</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/pardwab/common.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/pardwaammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/wtp.png">
+  </p>
+  </div>
+  
+  <!-- PARDWA MSZARNA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/pardwam.png" alt="willow ptarmigan pardwa mszarna" class="interaktywny-obraz" id="obraz46" onclick="pokazInformacje('informacje46')">
+  <div id="informacje46" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Willow Ptarmigan / Pardwa Mszarna</h2><br><br>
+	<font size="3">Występowanie: <b>Hemmeldal</b>
+	<br><img src="reserves/hemmeldal.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>430</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>810</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>65</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/pardwam/common.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/pardwaammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/pm.png">
+  </p>
+  </div>
+  
+  <!-- PARDWA GÓRSKA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/pardwag.png" alt="rock ptarmigan pardwa górska" class="interaktywny-obraz" id="obraz47" onclick="pokazInformacje('informacje47')">
+  <div id="informacje47" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Rock Ptarmigan / Pardwa Górska</h2><br><br>
+	<font size="3">Występowanie: <b>Val-Des-Bois</b>
+	<br><img src="reserves/val.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>440</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>640</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>65</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>unknown</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/pardwag/common.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/pardwaammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/pg.png">
+  </p>
+  </div>
+  
+  <!-- KACZKA KRZYŻÓWKA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/kaczka.png" alt="mallard duck kaczka krzyżówka" class="interaktywny-obraz" id="obraz48" onclick="pokazInformacje('informacje48')">
+  <div id="informacje48" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Mallard Duck / Kaczka Krzyżówka</h2><br><br>
+	<font size="3">Występowanie: <b>Rougarou Bayou</b>
+	<br><img src="reserves/rougarou.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>680</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>1600</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>40</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>1,6kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Brown Hybrid</b></td>
+	  <td><b>Black Hybrid</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/kaczka/common.png"></td>
+	  <td><img src="fur/kaczka/brownhybrid.png"></td>
+	  <td><img src="fur/kaczka/blackhybrid.png"></td>
+	  <td><img src="fur/kaczka/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/kaczkaammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/mallard.png">
+  </p>
+  </div>
+  
+  <!-- BRĄZÓWKA KACZKA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/abd.png" alt="american black duck kaczka brązówka" class="interaktywny-obraz" id="obraz49" onclick="pokazInformacje('informacje49')">
+  <div id="informacje49" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">American Black Duck / Brązówka Kaczka</h2><br><br>
+	<font size="3">Występowanie: <b>Rougarou Bayou</b>
+	<br><img src="reserves/rougarou.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>750</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>1600</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>40</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>1,6kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Hybrid</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/abd/common.png"></td>
+	  <td><img src="fur/abd/hybrid.png"></td>
+	  <td><img src="fur/abd/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/kaczkaammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/abd.png">
+  </p>
+  </div>
+  
+  <!-- ROŻENIEC KACZKA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/np.png" alt="northern pintail duck kaczka rożeniec" class="interaktywny-obraz" id="obraz50" onclick="pokazInformacje('informacje50')">
+  <div id="informacje50" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Northern Pintail / Rożeniec Kaczka</h2><br><br>
+	<font size="3">Występowanie: <b>Rougarou Bayou</b>
+	<br><img src="reserves/rougarou.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>450</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>1400</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>40</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>1,4kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Leucistic</b></td>
+	  <td><b>Hybrid</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/np/common.png"></td>
+	  <td><img src="fur/np/leucistic.png"></td>
+	  <td><img src="fur/np/hybrid.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/kaczkaammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/pin.png">
+  </p>
+  </div>
+  
+  <!-- KRAKWA KACZKA AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  <img src="animals/gw.png" alt="gadwall duck kaczka krakwa" class="interaktywny-obraz" id="obraz51" onclick="pokazInformacje('informacje51')">
+  <div id="informacje51" class="informacje">
+	<h2 style="background-color: orange; display: inline; padding: 5px; font-size: 50px;">Gadwall / Krakwa Kaczka</h2><br><br>
+	<font size="3">Występowanie: <b>Rougarou Bayou</b>
+	<br><img src="reserves/rougarou.png">
+    <p><style>
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 1px solid black;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+	<center> <font size="3">
+	<table>
+    <tr>
+      <td>Min Score</td>
+      <td><b>650</b></td>
+    </tr>
+    <tr>
+      <td>Max Score</td>
+      <td><b>1400</b></td>
+    </tr>
+	<tr>
+      <td>Max CSS</td>
+      <td><b>40</b></td>
+    </tr>
+	<tr>
+      <td>Max Weight</td>
+      <td><b>1,4kg</b></td>
+    </tr>
+	<tr>
+      <td>Female Scoring</td>
+      <td><b>yes</b></td>
+    </tr>
+  </table> 
+  </font> </center>
+   <br><b>FUR VARIATIONS</b><br>
+ <table>
+    <tr>
+	  <td><b>Common</b></td>
+	  <td><b>Leucistic</b></td>
+	  <td><b>Hybrid</b></td>
+	  <td><b>Albino</b></td>
+    </tr>
+    <tr>
+	  <td><img src="fur/gw/common.png"></td>
+	  <td><img src="fur/gw/leucistic.png"></td>
+	  <td><img src="fur/gw/hybrid.png"></td>
+	  <td><img src="fur/gw/albino.png"></td>
+    </tr>
+	</table>
+  <br><b>AMMO</b><br><img src="ammo/kaczkaammo.png">
+  <br><br>
+  <b>SCORING</b><br>
+  <img src="scoring/gadwall.png">
+  </p>
+  </div>
+  
+  <!-- ???? AKTUALNA WERSJA SPECYFIKACJI -->
+  
+  </center>
+</body>
+</html>
